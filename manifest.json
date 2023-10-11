@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "YouFocus",
   "version": "1.0",
-  "description": "A simple Chrome Extension that allows you to make youtube less distractive by hiding unnecessary stuff",
+  "description": "A Chrome extension designed to enhance your YouTube experience by minimizing distractions. Effortlessly hide elements you deem unnecessary for a more focused viewing.",
 
   "icons": {
     "16": "icons/icon_16.png",
