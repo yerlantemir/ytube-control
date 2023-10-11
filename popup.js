@@ -22,7 +22,8 @@ function handleSelectedOption() {
     });
 
     const selectedValue =
-      (await getStoredValue(StoredValueKeysEnum.setting)) ?? "basic";
+      (await getStoredValue(StoredValueKeysEnum.setting)) ??
+      DEFAULT_VALUES[StoredValueKeysEnum.setting];
     radio.checked = selectedValue === radio.id;
     if (!radio.checked)
       radio.closest(".section").classList.add("section-disabled");
@@ -45,7 +46,8 @@ function handleAdvancedSettingValues() {
       });
     });
     const advancedSettings =
-      (await getStoredValue(StoredValueKeysEnum.advancedSettings)) ?? {};
+      (await getStoredValue(StoredValueKeysEnum.advancedSettings)) ??
+      DEFAULT_VALUES[StoredValueKeysEnum.advancedSettings];
     input.checked = advancedSettings[input.id];
   });
 }
@@ -67,7 +69,8 @@ async function handleBasicSettingValues() {
 
   // Fetch the value from storage and set it to the input and styles
   const defaultComputedSliderValue =
-    (await getStoredValue("distractionLevel")) ?? DEFAULT_DISTRACTION_LEVEL;
+    (await getStoredValue("distractionLevel")) ??
+    DEFAULT_VALUES[StoredValueKeysEnum.distractionLevel];
 
   sliderInput.value = defaultComputedSliderValue;
   sliderInput.parentNode.style.setProperty(

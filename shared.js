@@ -1,5 +1,3 @@
-const DEFAULT_DISTRACTION_LEVEL = 3;
-
 const StoredValueKeysEnum = {
   setting: "setting",
   // if setting === basic
@@ -7,6 +5,19 @@ const StoredValueKeysEnum = {
   // if setting === advanced
   advancedSettings: "advancedSettings",
 };
+
+const DEFAULT_VALUES = {
+  [StoredValueKeysEnum.setting]: "basic",
+  [StoredValueKeysEnum.distractionLevel]: 3,
+  [StoredValueKeysEnum.advancedSettings]: {
+    thumbnails: true,
+    comments: true,
+    relatedVideos: true,
+    shorts: true,
+    videoDuration: true,
+  },
+};
+
 /**
  * Retrieves the stored distraction level from chrome's local storage.
  *

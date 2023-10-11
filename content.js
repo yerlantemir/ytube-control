@@ -108,14 +108,17 @@ const distractingElements = {
 };
 
 async function getPersistedSettings() {
+  const setting = await getStoredValue(StoredValueKeysEnum.setting);
+  const distractionLevel = await getStoredValue(
+    StoredValueKeysEnum.distractionLevel
+  );
+  const advancedSettings = await getStoredValue(
+    StoredValueKeysEnum.advancedSettings
+  );
   return {
-    setting: await getStoredValue(StoredValueKeysEnum.setting),
-    distractionLevel: await getStoredValue(
-      StoredValueKeysEnum.distractionLevel
-    ),
-    advancedSettings: await getStoredValue(
-      StoredValueKeysEnum.advancedSettings
-    ),
+    ...(setting && { setting }),
+    ...(distractionLevel && { distractionLevel }),
+    ...(advancedSettings && { advancedSettings }),
   };
 }
 
@@ -140,6 +143,7 @@ let mounted = false;
 async function updateUI(customSettings = {}) {
   const persistedSettings = await getPersistedSettings();
   const settings = {
+    ...DEFAULT_VALUES,
     ...persistedSettings,
     ...customSettings,
   };
