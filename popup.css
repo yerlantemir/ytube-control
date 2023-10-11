@@ -1,3 +1,18 @@
+html {
+  height: 300px;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: fit-content;
+  width: 300px;
+}
+
+.setting-checkbox {
+  padding-bottom: 12px;
+}
+
 input[type="checkbox"].switch {
   height: 0;
   width: 0;
@@ -50,11 +65,13 @@ label.switch-label:active:after {
   row-gap: 12px;
 }
 
-.section {
-  padding-top: 24px;
-  background: white;
-}
-
 .section-disabled .range-slider__progress:before {
   background: #dddddd;
+}
+
+.range-slider::before {
+  content: "Low Focus" !important;
+}
+.range-slider::after {
+  content: "High Focus" !important;
 }
