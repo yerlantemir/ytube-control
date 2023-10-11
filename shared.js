@@ -1,5 +1,12 @@
 const DEFAULT_DISTRACTION_LEVEL = 3;
 
+const StoredValueKeysEnum = {
+  setting: "setting",
+  // if setting === basic
+  distractionLevel: "distractionLevel",
+  // if setting === advanced
+  advancedSettings: "advancedSettings",
+};
 /**
  * Retrieves the stored distraction level from chrome's local storage.
  *
@@ -20,9 +27,9 @@ async function getStoredValue(key) {
   advanced-settings: {
     thumbnails: boolean;
     comments: boolean;
-    related: boolean;
+    relatedVideos: boolean;
     shorts: boolean;
-    duration: boolean;
+    videoDuration: boolean;
   }
 
   popup.js:

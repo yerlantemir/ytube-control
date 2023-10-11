@@ -17,14 +17,9 @@
   <body>
     Focus level:
     <div class="section">
-      <div>
-        <input
-          type="checkbox"
-          id="basic-settings"
-          name="basic-settings"
-          checked
-        />
-        <label for="basic-settings">Use basic settings</label>
+      <div class="setting-checkbox">
+        <input type="radio" id="basic" name="setting-radio" checked />
+        <label for="basic">Use basic settings</label>
       </div>
       <div
         class="range-slider"
@@ -36,14 +31,9 @@
       </div>
     </div>
     <div class="section">
-      <div>
-        <input
-          type="checkbox"
-          id="advanced-settings"
-          name="advanced-settings"
-          checked
-        />
-        <label for="advanced-settings">Use advanced settings</label>
+      <div class="setting-checkbox">
+        <input type="radio" id="advanced" name="setting-radio" checked />
+        <label for="advanced">Use advanced settings</label>
       </div>
       <div class="custom-options">
         <div>
@@ -63,9 +53,9 @@
         </div>
         <div>
           Related Videos
-          <input type="checkbox" id="related" class="switch" /><label
+          <input type="checkbox" id="relatedVideos" class="switch" /><label
             class="switch-label"
-            for="related"
+            for="relatedVideos"
             >Toggle</label
           >
         </div>
@@ -78,9 +68,9 @@
         </div>
         <div>
           Video Duration
-          <input type="checkbox" id="duration" class="switch" /><label
+          <input type="checkbox" id="videoDuration" class="switch" /><label
             class="switch-label"
-            for="duration"
+            for="videoDuration"
             >Toggle</label
           >
         </div>
