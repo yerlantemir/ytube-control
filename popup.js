@@ -11,11 +11,21 @@ function handleSelectedOption() {
       chrome.storage.local.set({
         [StoredValueKeysEnum.setting]: radio.id,
       });
+
+      settingRadios.forEach((nestedRadio) => {
+        if (radio === nestedRadio) {
+          nestedRadio.closest(".section").classList.remove("section-disabled");
+        } else {
+          nestedRadio.closest(".section").classList.add("section-disabled");
+        }
+      });
     });
 
     const selectedValue =
       (await getStoredValue(StoredValueKeysEnum.setting)) ?? "basic";
     radio.checked = selectedValue === radio.id;
+    if (!radio.checked)
+      radio.closest(".section").classList.add("section-disabled");
   });
 }
 

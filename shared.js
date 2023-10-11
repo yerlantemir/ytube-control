@@ -19,31 +19,3 @@ async function getStoredValue(key) {
     });
   });
 }
-
-/*
-
-  setting: basic | advanced
-  sliderValue: 0 - 5
-  advanced-settings: {
-    thumbnails: boolean;
-    comments: boolean;
-    relatedVideos: boolean;
-    shorts: boolean;
-    videoDuration: boolean;
-  }
-
-  popup.js:
-    - get stored setting
-    - get stored sliderValue
-    - get stored advanced-settings
-    - update popup.html
-
-  content.js:
-    - get setting option
-
-  updateElem:
-    create shouldShowVariable for each setting
-      shouldShow = basic ? computedDistractionLevel >= level : advanced-settings[setting]
-
-  On distraction level change, I should also maintain the state of the advanced settings.
-*/

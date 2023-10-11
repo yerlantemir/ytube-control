@@ -31,6 +31,10 @@ input:checked + label.switch-label {
   background: #0366d6;
 }
 
+.section-disabled input + label.switch-label {
+  background: #dddddd;
+}
+
 input:checked + label.switch-label:after {
   left: calc(100% - 1.2px);
   transform: translateX(-100%);
@@ -48,4 +52,9 @@ label.switch-label:active:after {
 
 .section {
   padding-top: 24px;
+  background: white;
+}
+
+.section-disabled .range-slider__progress:before {
+  background: #dddddd;
 }
