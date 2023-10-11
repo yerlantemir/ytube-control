@@ -1,1 +1,34 @@
-<div>hello there</div>
+<html>
+  <head>
+    <style>
+      body {
+        padding: 24px;
+      }
+    </style>
+    <script src="popup.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@yaireo/ui-range@latest/ui-range.css"
+    />
+  </head>
+  <body>
+    Distraction level:
+    <div
+      class="range-slider"
+      style="
+        --min: 0;
+        --max: 100;
+        --value: 75;
+        --text-value: '75';
+        --suffix: '%';
+        --step: 25;
+        width: 300px;
+      "
+    >
+      <input type="range" min="0" max="100" value="75" step="25" />
+      <output></output>
+      <div class="range-slider__progress"></div>
+    </div>
+  </body>
+</html>
