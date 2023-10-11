@@ -8,20 +8,83 @@
     <script src="shared.js"></script>
     <script src="popup.js"></script>
 
+    <link rel="stylesheet" href="popup.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@yaireo/ui-range@latest/ui-range.css"
     />
   </head>
   <body>
-    Distraction level:
-    <div
-      class="range-slider"
-      style="--min: 0; --max: 100; --suffix: '%'; --step: 25; width: 300px"
-    >
-      <input type="range" min="0" max="100" step="25" />
-      <output></output>
-      <div class="range-slider__progress"></div>
+    Focus level:
+    <div class="section">
+      <div>
+        <input
+          type="checkbox"
+          id="basic-settings"
+          name="basic-settings"
+          checked
+        />
+        <label for="basic-settings">Use basic settings</label>
+      </div>
+      <div
+        class="range-slider"
+        style="--min: 0; --max: 3; --step: 1; width: 300px"
+      >
+        <input type="range" min="0" max="3" step="1" />
+        <output></output>
+        <div class="range-slider__progress"></div>
+      </div>
+    </div>
+    <div class="section">
+      <div>
+        <input
+          type="checkbox"
+          id="advanced-settings"
+          name="advanced-settings"
+          checked
+        />
+        <label for="advanced-settings">Use advanced settings</label>
+      </div>
+      <div class="custom-options">
+        <div>
+          Thumbnails
+          <input type="checkbox" class="switch" id="thumbnails" /><label
+            class="switch-label"
+            for="thumbnails"
+            >Toggle</label
+          >
+        </div>
+        <div>
+          Comments <input type="checkbox" id="comments" class="switch" /><label
+            class="switch-label"
+            for="comments"
+            >Toggle</label
+          >
+        </div>
+        <div>
+          Related Videos
+          <input type="checkbox" id="related" class="switch" /><label
+            class="switch-label"
+            for="related"
+            >Toggle</label
+          >
+        </div>
+        <div>
+          Shorts <input type="checkbox" id="shorts" class="switch" /><label
+            class="switch-label"
+            for="shorts"
+            >Toggle</label
+          >
+        </div>
+        <div>
+          Video Duration
+          <input type="checkbox" id="duration" class="switch" /><label
+            class="switch-label"
+            for="duration"
+            >Toggle</label
+          >
+        </div>
+      </div>
     </div>
   </body>
 </html>

@@ -24,9 +24,9 @@ setInterval(() => {
  * Listens for messages from the popup and updates when user changes the slider value.
  */
 chrome.runtime.onMessage.addListener(function (message) {
-  if (message.sliderValue) {
+  if (message.distractionLevel) {
     updateElem({
-      distractionLevel: message.sliderValue,
+      distractionLevel: message.distractionLevel,
     });
   }
 });
@@ -38,7 +38,7 @@ const distractingElements = {
             visibility: hidden;
         }
         `,
-    level: 25,
+    level: 1,
   },
   comments: {
     css: `
@@ -46,7 +46,7 @@ const distractingElements = {
             display: none;
         }
         `,
-    level: 25,
+    level: 1,
   },
   relatedVideos: {
     css: `
@@ -54,7 +54,7 @@ const distractingElements = {
             display: none;
         }
     `,
-    level: 75,
+    level: 2,
   },
   shorts: {
     css: `
@@ -63,7 +63,7 @@ const distractingElements = {
             display: none;
         }
     `,
-    level: 100,
+    level: 3,
     show: () => {
       const element = document.querySelector('[title="Shorts"]');
       if (element) {
@@ -103,7 +103,7 @@ const distractingElements = {
             display: none;
         }
     `,
-    level: 100,
+    level: 3,
   },
 };
 
@@ -114,11 +114,12 @@ const distractingElements = {
  * @param {boolean} [options.isFirstLoad=false] - Flag indicating if it's the first time the function is called.
  */
 async function updateElem({ distractionLevel, isFirstLoad = false }) {
-  const storedDistractionLevel = await getStoredDistractionLevel();
+  const storedDistractionLevel = await getStoredValue("distractionLevel");
 
   const computedDistractionLevel =
     distractionLevel ?? storedDistractionLevel ?? DEFAULT_DISTRACTION_LEVEL;
 
+  console.log({ storedDistractionLevel, computedDistractionLevel });
   let injectingCss = "";
 
   Object.keys(distractingElements).forEach((key) => {
