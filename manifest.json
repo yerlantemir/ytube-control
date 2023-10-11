@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+
+  "name": "My Chrome Extension",
+  "version": "1.0",
+  "description": "A simple Chrome Extension boilerplate",
+
+  "icons": {},
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+
+  "permissions": ["activeTab"]
+}
