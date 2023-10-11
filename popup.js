@@ -1,5 +1,3 @@
-const DEFAULT_DISTRACTION_LEVEL = 100;
-
 document.addEventListener("DOMContentLoaded", async function () {
   const sliderInput = document.querySelector('input[type="range"]');
 
@@ -39,11 +37,3 @@ document.addEventListener("DOMContentLoaded", async function () {
     });
   });
 });
-
-function getStoredDistractionLevel() {
-  return new Promise((resolve) => {
-    chrome.storage.local.get("sliderValue", function ({ sliderValue }) {
-      resolve(sliderValue);
-    });
-  });
-}
