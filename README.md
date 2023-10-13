@@ -1,4 +1,4 @@
-# YouFocus
+# ytube-control
 
 A Chrome extension designed to enhance your YouTube experience by minimizing distractions. Effortlessly hide elements you deem unnecessary for a more focused viewing.
 

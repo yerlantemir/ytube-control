@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "YouFocus",
+  "name": "YouTube Distraction Controller",
   "version": "0.1",
-  "description": "A Chrome extension designed to enhance your YouTube experience by minimizing distractions. Effortlessly hide elements you deem unnecessary for a more focused viewing.",
+  "description": "A Chrome extension designed to enhance your YouTube experience by minimizing distractions.",
 
   "icons": {
     "16": "icons/icon_16.png",
