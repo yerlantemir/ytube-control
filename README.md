@@ -3,7 +3,7 @@
 A Chrome extension designed to enhance your YouTube experience by minimizing distractions. Effortlessly hide elements you deem unnecessary for a more focused viewing.
 
 ## ✨ Automatic install
-Coming soon...
+- [Chrome Web Store](https://chrome.google.com/webstore/detail/youtube-distraction-contr/pkdcjpkbnaledelhhhekdkpghjnbcggg)
 
 ## 👷 Manual install
 
